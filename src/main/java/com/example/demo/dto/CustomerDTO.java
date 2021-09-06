@@ -16,9 +16,16 @@ import javax.validation.constraints.Pattern;
 public class CustomerDTO {
 
   /**
+   * First Name
+   */
+  @ApiModelProperty(value = "firstName", required = true)
+  @NotBlank(message = "firstName 名称不能为空")
+  private String firstName;
+
+  /**
    * Last Name
    */
   @ApiModelProperty(value = "lastName", required = true)
-  @NotBlank(message = "名称不能为空")
+  @NotBlank(message = "lastName 名称不能为空")
   private String lastName;
 }
