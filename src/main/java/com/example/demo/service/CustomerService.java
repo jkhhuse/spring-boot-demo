@@ -27,4 +27,18 @@ public interface CustomerService {
      * @return
      */
     CustomerDO findById(long id);
+
+    /**
+     * 根据 id 删除 Customer
+     * @param id
+     */
+    void deleteById(long id);
+
+    /**
+     * 更新 Customer 信息
+     * @param lastName
+     * @return
+     */
+    CustomerDO updateCustomer(long id, String lastName);
+
 }

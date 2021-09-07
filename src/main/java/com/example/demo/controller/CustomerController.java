@@ -39,4 +39,20 @@ public class CustomerController {
     return new CommonResponse("200", customerId, "Customer 添加成功");
   }
 
+  @ApiOperation(value = "删除用户", notes = "根据ID删除")
+  @DeleteMapping(value = "/delete/{id}")
+  CommonResponse<String> deleteCustomer(
+          @ApiParam(value = "ID", required = true) @Valid @PathVariable Long id) {
+    customerService.deleteById(id);
+    return new CommonResponse("200", "success", "Customer 删除成功");
+  }
+
+  @ApiOperation(value = "更新用户名", notes = "根据ID更新用户名")
+  @DeleteMapping(value = "/update/{id}")
+  CommonResponse<String> updateCustomer(
+          @ApiParam(value = "ID", required = true) @Valid @PathVariable Long id,
+          @ApiParam(value = "LastName", required = true) @Valid @RequestParam String lastName) {
+    CustomerDO customerDO = customerService.updateCustomer(id, lastName);
+    return new CommonResponse("200", customerDO, "Customer 更新成功");
+  }
 }

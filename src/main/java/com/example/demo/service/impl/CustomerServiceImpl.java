@@ -35,4 +35,19 @@ public class CustomerServiceImpl implements CustomerService {
         return customerDao.findById(id);
     }
 
+    public void deleteById(long id) {
+        //TODO: 判断是否存在 id 对应的记录
+        customerDao.deleteById(id);
+    }
+
+    @Override
+    public CustomerDO updateCustomer(long id, String lastName) {
+        CustomerDO customerDO = customerDao.findById(id);
+        if (customerDO == null) {
+            throw new RuntimeException("查询不到该用户!");
+        }
+        customerDO.setLastName(lastName);
+        customerDao.save(customerDO);
+        return customerDO;
+    }
 }
