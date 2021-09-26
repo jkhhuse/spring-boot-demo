@@ -12,7 +12,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import javax.validation.Valid;
 
@@ -48,7 +47,7 @@ public class CustomerController {
   }
 
   @ApiOperation(value = "更新用户名", notes = "根据ID更新用户名")
-  @DeleteMapping(value = "/update/{id}")
+  @PutMapping(value = "/update/{id}")
   CommonResponse<String> updateCustomer(
           @ApiParam(value = "ID", required = true) @Valid @PathVariable Long id,
           @ApiParam(value = "LastName", required = true) @Valid @RequestParam String lastName) {

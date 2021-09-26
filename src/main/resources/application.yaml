@@ -27,3 +27,15 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  redis:
+    host: 192.168.237.242
+    port: 6379
+    password: test
+    database: 0
+    timeout: 30000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 30000
+        max-idle: 8
+        min-idle: 2
