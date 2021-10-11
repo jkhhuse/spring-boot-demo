@@ -6,7 +6,6 @@ import org.apache.kafka.common.TopicPartitionInfo;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.Collection;
