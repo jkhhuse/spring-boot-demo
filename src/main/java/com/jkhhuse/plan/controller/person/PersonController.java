@@ -24,12 +24,13 @@ public class PersonController {
   @ApiOperation(value = "新增用户", notes = "新增一条记录")
   @PostMapping(value = "/add", consumes = "application/json")
   CommonResponse<List<CustomerVO>> addCustomer(
-          @ApiParam(value = "客户信息", required = true) @Valid @RequestBody PersonDTO personDTO) {
+          @ApiParam(value = "用户信息", required = true) @Valid @RequestBody PersonDTO personDTO) {
+    String message = "";
     try {
-      personService.addPerson(personDTO);
+      message = personService.addPerson(personDTO);
     } catch (Exception e) {
       System.out.println(e);
     }
-    return new CommonResponse("200", "", "Customer 添加成功");
+    return new CommonResponse("200", "", message);
   }
 }

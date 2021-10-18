@@ -21,5 +21,4 @@ public interface PersonService {
      * @return
      */
     PersonDO updatePerson(long uuid, String lastName);
-
 }
